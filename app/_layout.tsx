@@ -1,12 +1,15 @@
-import { Stack } from "expo-router";
-import "./globals.css";
-export default function RootLayout() {
+import { Stack } from 'expo-router';
+
+export default function Layout() {
   return (
     <Stack>
       <Stack.Screen 
         name="index" 
-        options={{ title: "Movie App", headerTitleAlign: "center" }}
-        />
+        options={{
+          title: "Home",
+          headerTitleAlign: 'center',
+        }} 
+      />
     </Stack>
   );
 }

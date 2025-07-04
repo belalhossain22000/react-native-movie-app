@@ -1,6 +1,11 @@
-const { getDefaultConfig } = require("expo/metro-config");
-const { withNativeWind } = require('nativewind/metro');
- 
-const config = getDefaultConfig(__dirname)
- 
-module.exports = withNativeWind(config, { input: './app/globals.css' })
+const { getDefaultConfig } = require('expo/metro-config');
+
+const config = getDefaultConfig(__dirname);
+
+// Add this resolver configuration
+config.resolver.alias = {
+  ...config.resolver.alias,
+  'postcss': require.resolve('postcss'),
+};
+
+module.exports = config;
